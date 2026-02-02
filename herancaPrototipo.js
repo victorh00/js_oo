@@ -7,6 +7,9 @@ const user = {
   exibirInfo: function () {
     console.log(this.nome, this.email);
   },
+  criarCurso() {
+    console.log("curso criado em user");
+  },
 };
 
 const admin = {
@@ -17,15 +20,15 @@ const admin = {
   // ativo: ,
   // se não houver na instância, js sobe na cadeia de protótipos em busca da propriedade.
   criarCurso() {
-    console.log("curso criado");
+    console.log("curso criado em admin");
   },
 };
 
-Object.setPrototypeOf(admin, user);
-admin.criarCurso();
-admin.exibirInfo();
+Object.setPrototypeOf(admin, user); //the prototype of 'admin' is now 'user'
+admin.criarCurso(); //se achar no obj, usa a prop do obj
+admin.exibirInfo(); //se não achar, sobe na cadeia de protos
 
-console.log("observando a cadeia de protótipos: admin.__proto__");
+console.log("observando a cadeia de protótipos disponível em admin.__proto__");
 console.log(admin.__proto__);
 console.log("\nmais um nível: admin.__proto__.__proto__");
 console.log(admin.__proto__.__proto__);
