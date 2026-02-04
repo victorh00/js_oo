@@ -7,15 +7,20 @@ export default class User {
     this.funcao = funcao || "estudante";
     this.ativo = ativo;
   }
+  criarPerfil() {}
+  apagarPerfil() {}
   exibirInfo() {
     console.log(this.nome, this.email);
   }
+  exibirListaCursos() {}
+  matricularEmCurso() {}
+  exibirCursosMatriculados() {}
 }
 //
-console.log("instanciação usando açúcar sintático class");
-const novoUser = new User("juliana", "j@j.com", "2024-01-01");
-console.log(novoUser);
-novoUser.exibirInfo();
+// console.log("instanciação usando açúcar sintático class");
+// const novoUser = new User("juliana", "j@j.com", "2024-01-01");
+// console.log(novoUser);
+// novoUser.exibirInfo();
 //
-console.log("\nverifica se User é protótipo de novoUser: ");
-console.log(User.prototype.isPrototypeOf(novoUser));
+// console.log("\nverifica se User é protótipo de novoUser: ");
+// console.log(User.prototype.isPrototypeOf(novoUser));
