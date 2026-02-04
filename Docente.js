@@ -10,5 +10,5 @@ export default class Docente extends User {
   reprovarEstudante() {}
 }
 
-const novaDocente = new Docente("Ana", "a@a.com", "2025-02-02");
-console.log(novaDocente.aprovarEstudante("Maria", "JS"));
+// const novaDocente = new Docente("Ana", "a@a.com", "2025-02-02");
+// console.log(novaDocente.aprovarEstudante("Maria", "JS"));

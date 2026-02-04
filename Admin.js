@@ -1,6 +1,6 @@
 import User from "./User.js";
 
-class Admin extends User {
+export default class Admin extends User {
   constructor(nome, email, nascimento, funcao = "admin", ativo = true) {
     super(nome, email, nascimento, funcao, ativo);
   }
@@ -11,8 +11,7 @@ class Admin extends User {
   desativarPerfil() {}
 }
 
-const novoAdmin = new Admin("rodrigo", "r@r.com", "2025-01-01");
-
-novoAdmin.exibirInfo(); // método herdado
-console.log(novoAdmin.ativo, novoAdmin.funcao); // atributos herdados
-console.log(novoAdmin.criarCurso("JS", 100));
+// const novoAdmin = new Admin("rodrigo", "r@r.com", "2025-01-01");
+// novoAdmin.exibirInfo(); // método herdado
+// console.log(novoAdmin.ativo, novoAdmin.funcao); // atributos herdados
+// console.log(novoAdmin.criarCurso("JS", 100));
