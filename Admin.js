@@ -9,6 +9,11 @@ export default class Admin extends User {
   }
   excluirCurso() {}
   desativarPerfil() {}
+  // override, sobrescrita do método exibirInfo()
+  exibirInfo() {
+    const info = super.exibirInfo();
+    return `${info} (admin)`;
+  }
 }
 
 // const novoAdmin = new Admin("rodrigo", "r@r.com", "2025-01-01");

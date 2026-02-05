@@ -48,11 +48,31 @@ export default class User {
   criarPerfil() {}
   apagarPerfil() {}
   exibirInfo() {
-    console.log(this.#nome, this.#email);
+    return `${this.#nome}, ${this.#email}`;
   }
   exibirInfo2() {
     const objUser = this.#montaObjUser();
-    console.log(objUser.nome, objUser.email);
+    return `${objUser.nome}, ${objUser.email}`;
+  }
+  // overload ficticio pois o js não suporta a maneira usual
+  exibirInfo3() {
+    if (this.funcao === "estudante") {
+      return `dados estudante: ${this.nome}`;
+    }
+    if (this.funcao === "admin") {
+      return `dados admin    : ${this.nome}, ${this.#funcao}`;
+    }
+    if (this.funcao === "docente") {
+      return `dados docente  : ${this.nome}, ${this.email}`;
+    }
+  }
+  exibirInfo4(tipo) {
+    if (tipo === "basico") {
+      return `dados básicos: ${this.nome}`;
+    }
+    if (tipo === "completo") {
+      return `dados completos: ${this.nome}, ${this.email}, ${this.nascimento}`;
+    }
   }
   exibirListaCursos() {}
   matricularEmCurso() {}
@@ -65,6 +85,9 @@ export default class User {
       funcao: this.#funcao,
       ativo: this.#ativo,
     };
+  }
+  static exibirInfoGenerica(nome, email) {
+    return `${nome}, ${email}`;
   }
 }
 //
